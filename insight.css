@@ -1,0 +1,21 @@
+#start {
+	width: 300px;
+	margin: 50px auto;
+}
+
+.disc {
+	display: inline-block;
+	border: 1px solid #000;
+	padding: 25px;
+	margin: 25px;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.disc:hover {
+	cursor: pointer;
+}
+
+.hidden {
+	display: none;
+}
