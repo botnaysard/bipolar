@@ -1,0 +1,19 @@
+$(document).ready(function(){
+	$('#addentry').click(function() {
+		var entryType = $("#addtype").val();
+		var whichCollection = entryType + "s";
+        var newEntry = $("#nentry").val();
+        var fieldName = entryType + "class"
+        console.log(entryType);
+        console.log(whichCollection);
+        console.log(newEntry);
+        console.log(fieldName);
+        $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/" + whichCollection + "?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
+        	data: JSON.stringify( { fieldName : newEntry } ),
+        	type: "POST",
+        	contentType: "application/json" } );
+        alert("new " + entryType + " added");
+        $("#addnewform").trigger("reset");
+        setTimeout(location.reload.bind(location), 750);
+    });
+});
