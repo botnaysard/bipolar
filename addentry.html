@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Insight - Add New Event Or Mood Type</title>
+	<link rel="stylesheet" type="text/css" href="insight.css">
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="insight.js"></script>
+</head>
+<body>
+	<header></header>
+	<section>
+		<h1>Add New Event Or Mood Type</h1>	
+		<div class="holder" id="newentrypage">
+			<form action="submit" id="addnewform">
+				Add a new  
+				<select id="addtype">
+					<option value="mood">mood</option>
+					<option value="event">event</option>
+				</select> 
+				<input type="text" name="newentry" id="nentry">
+				<button type="button" id="addentry">add</button>
+			</form>	
+		</div>
+	</section>
+	<footer></footer>
+</body>
+</html>
