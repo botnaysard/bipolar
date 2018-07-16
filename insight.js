@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	/* use standard links for navigation now, but save this for dynamic content later 
+
 	$('.disc').click(function(){
 		var whichOne = $(this).attr('id');
 		console.log(whichOne);
@@ -7,6 +9,8 @@ $(document).ready(function(){
 		$('#' + whichOne +'page').show();
 
 	});
+
+	*/
 
 	/* add a new mood */
 

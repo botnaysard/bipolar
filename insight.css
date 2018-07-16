@@ -1,4 +1,4 @@
-#start {
+.holder {
 	width: 500px;
 	margin: 50px auto;
 }
@@ -17,12 +17,7 @@
 	cursor: pointer;
 }
 
-.hidden {
-	display: none;
+h1 {
+	text-align: center;
 }
 
-/* display only the main mood/event choice when page is loaded */
-
-#moodpage, #eventpage, #newentrypage {
-	display: none;
-}
