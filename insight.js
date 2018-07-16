@@ -27,6 +27,7 @@ $(document).ready(function(){
         	data: JSON.stringify( { fieldName : newEntry } ),
         	type: "POST",
         	contentType: "application/json" } );
+        alert("new " + entryType + " added");
         $("#addnewform").trigger("reset");
         setTimeout(location.reload.bind(location), 750);
     });
