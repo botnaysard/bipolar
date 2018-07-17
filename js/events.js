@@ -11,7 +11,7 @@ $(document).ready(function(){
         /* eventsList.sort(); */
 
         for (var i = 0; i < eventsList.length; i++) {
-            $('<div/>').html(eventsList[i][0] + ' </span>' + '[<span class="delbutton">X</span>]').attr("id", eventsList[i][1].$oid ).appendTo('#eventlist').addClass("disc");
+            $('<div/>').html(eventsList[i][0] + ' </span>' + '<span class="delbutton hidden"><i class="fas fa-times-circle"></i></span>').attr("id", eventsList[i][1].$oid ).appendTo('#eventlist').addClass("disc");
         }
 
         /* add delete function to each item */
@@ -19,7 +19,8 @@ $(document).ready(function(){
         var deleters = document.getElementsByClassName("delbutton"); 
 
         for (var i = 0; i < deleters.length; i++) {
-          deleters[i].addEventListener('click', function () {
+          deleters[i].addEventListener('click', function (event) {
+            event.stopPropagation();
             var itemToDelete = $(this).parent().attr('id');
             var urlForDeletion = 'https://api.mlab.com/api/1/databases/moodtracker/collections/events/' + itemToDelete + '?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg' ;
             console.log(urlForDeletion);
@@ -35,7 +36,7 @@ $(document).ready(function(){
     });
 
     $("#eventlist").on("click", "div", function() {
-        var submitEvent = $(this).text().slice(0, -4);
+        var submitEvent = $(this).text();
         var submitEventDate = Date();
         $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/etracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
             data: JSON.stringify( { eventType : submitEvent, eventDate : submitEventDate} ),
@@ -43,4 +44,11 @@ $(document).ready(function(){
             contentType: "application/json" } );
         alert(submitEvent + " logged at " + submitEventDate);
     });
+
+    /* toggle delete buttons */
+
+    $("#editmode").on("click", function(){
+        $(".delbutton").fadeToggle("hidden");
+    });
+
 });
