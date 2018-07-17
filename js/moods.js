@@ -7,12 +7,29 @@ $(document).ready(function(){
         for (var i = 0; i < data.length; i++) {
             moodList[i] = [data[i].fieldName, data[i]._id];
         }
-        
-        /* moodList.sort(); */
 
+        var colors = ['#F44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#009688','#4CAF50','#8BC34A','#FFEB3B','#FFC107','#FF9800','#FF5722','#795548','#9E9E9E'];
+        
         for (var i = 0; i < moodList.length; i++) {
-            $('<div/>').html(moodList[i][0] + ' </span>' + '<span class="delbutton hidden"><i class="fas fa-times-circle"></i></span>').attr("id", moodList[i][1].$oid ).appendTo('#moodlist').addClass("disc");
+
+
+            /* randomly pick a color for each item */
+
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+            console.log(randomColor);
+        
+            /* Find and remove selected from an array so it won't be used again */
+
+            var colorIndex = colors.indexOf(randomColor);
+            if(colorIndex != -1) {
+                colors.splice(colorIndex, 1);
+            }
+            
+            $('<div/>').html(moodList[i][0] + ' </span>' + '<span class="delbutton hidden"><i class="fas fa-times-circle"></i></span>').attr("id", moodList[i][1].$oid ).appendTo('#moodlist').addClass("disc").css('background-color', randomColor); 
+
         }
+
+        console.log(colors);
 
         /* add delete function to each item */
 

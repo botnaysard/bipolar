@@ -7,11 +7,26 @@ $(document).ready(function(){
         for (var i = 0; i < data.length; i++) {
             eventsList[i] = [data[i].fieldName, data[i]._id];
         }
-        
-        /* eventsList.sort(); */
+
+        var colors = ['#F44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#009688','#4CAF50','#8BC34A','#FFEB3B','#FFC107','#FF9800','#FF5722','#795548','#9E9E9E'];
 
         for (var i = 0; i < eventsList.length; i++) {
-            $('<div/>').html(eventsList[i][0] + ' </span>' + '<span class="delbutton hidden"><i class="fas fa-times-circle"></i></span>').attr("id", eventsList[i][1].$oid ).appendTo('#eventlist').addClass("disc");
+
+            /* randomly pick a color for each item */
+
+            
+            var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+            /* Find and remove selected from an array so it won't be used again */
+
+            var colorIndex = colors.indexOf(randomColor);
+            if(colorIndex != -1) {
+                colors.splice(colorIndex, 1);
+            }
+            
+            /* draw the item */
+
+            $('<div/>').html(eventsList[i][0] + ' </span>' + '<span class="delbutton hidden"><i class="fas fa-times-circle"></i></span>').attr("id", eventsList[i][1].$oid ).appendTo('#eventlist').addClass("disc").css('background-color', randomColor);
         }
 
         /* add delete function to each item */
@@ -50,5 +65,7 @@ $(document).ready(function(){
     $("#editmode").on("click", function(){
         $(".delbutton").fadeToggle("hidden");
     });
+
+
 
 });
