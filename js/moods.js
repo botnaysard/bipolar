@@ -8,7 +8,7 @@ $(document).ready(function(){
             moodList[i] = [data[i].fieldName, data[i]._id];
         }
 
-        var colors = ['#F44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#009688','#4CAF50','#8BC34A','#FFEB3B','#FFC107','#FF9800','#FF5722','#795548','#9E9E9E'];
+        var colors = ['#F44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#009688','#4CAF50','#8BC34A','#FFC107','#FF9800','#FF5722','#795548','#9E9E9E'];
         
         for (var i = 0; i < moodList.length; i++) {
 
@@ -25,7 +25,7 @@ $(document).ready(function(){
                 colors.splice(colorIndex, 1);
             }
             
-            $('<div/>').html(moodList[i][0] + ' </span>' + '<span class="delbutton hidden"><i class="fas fa-times-circle"></i></span>').attr("id", moodList[i][1].$oid ).appendTo('#moodlist').addClass("disc").css('background-color', randomColor); 
+            $('<div/>').html(moodList[i][0] + ' </span>' + '<span class="delbutton"><i class="fas fa-times-circle"></i></span>').attr("id", moodList[i][1].$oid ).appendTo('#moodlist').addClass("disc").css('background-color', randomColor); 
 
         }
 
@@ -70,7 +70,20 @@ $(document).ready(function(){
     /* toggle delete buttons */
 
     $("#editmode").on("click", function(){
-        $(".delbutton").fadeToggle("hidden");
+        $(".delbutton").fadeToggle("slow", "linear");
+    });
+
+    /* add a custom event */
+
+    $('#addentry').click(function() {
+        var newEntry = $("#nentry").val();
+        $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/moods?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
+            data: JSON.stringify( { fieldName : newEntry } ),
+            type: "POST",
+            contentType: "application/json" } );
+        alert("new mood " + newEntry + " added");
+        $("#addnewform").trigger("reset");
+        setTimeout(location.reload.bind(location), 750);
     });
 
 });

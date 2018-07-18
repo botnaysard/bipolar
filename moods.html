@@ -14,10 +14,14 @@
 	<section>	
 		<h1>insight:</h1>
 			<div id="modeinfo">
-				<div id="introtag" class="makeinline">Log a mood</h2>
+				<div id="introtag" class="makeinline">What's your mood right now?</h2>
 				<div id="editmode"><i class="fas fa-edit"></i></div>
 			</div>
 		<div class="holder" id="moodlist"></div>
+		<form action="submit" id="addnewform"> 
+			<input type="text" name="newentry" id="nentry" placeholder="add a custom mood">
+			<button type="button" id="addentry"><i class="far fa-save fa-3x"></i></button>
+		</form>
 	</section>
 	<footer></footer>
 </body>
