@@ -52,19 +52,32 @@ $(document).ready(function(){
         }
     });
 
-    $("#moodlist").on("click", "div", function() {
-        var submitMood = $(this).text().slice(0, -4);            
-    });
+    /* need to fix submission of double records when an option is selected but "no" is chosen, that selection gets submitted whenever the selected eventually gets sent */
 
-
-    $("#moodlist").on("click", "div", function() {
+    $("#moodlist").on("click", "div", function() { 
         var submitMood = $(this).text();
         var submitMoodDate = Date();
-        $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
-            data: JSON.stringify( { moodType : submitMood, moodDate : submitMoodDate} ),
-            type: "POST",
-            contentType: "application/json" } );
-        alert(submitMood + " mood logged at " + submitMoodDate);
+
+        $("#main").hide();
+        $("#popup").show();
+        $("#prompt").html("Record <span id=mshighlight>" + submitMood + "</span> moodstate?");
+
+        $("#yes").on("click", function() {
+            $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
+                data: JSON.stringify( { moodType : submitMood, moodDate : submitMoodDate} ),
+                type: "POST",
+                contentType: "application/json" } );
+            $("#success").show();
+            $(".disc").hide();
+            $("#prompt").hide();
+            setTimeout(function() { window.location.href = "index.html"; }, 3000);
+        });
+
+        $("#no").on("click", function() {
+            $("#main").show();
+            $("#popup").hide();
+        });
+
     });
 
     /* toggle delete buttons */
