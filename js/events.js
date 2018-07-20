@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-    /* retrieve possible moods from list and display them */
+    $("#main").fadeIn();  
+
+    /* retrieve possible events from list and display them */
 
     $.getJSON("https://api.mlab.com/api/1/databases/moodtracker/collections/events?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg", function (data) {
         var eventsList = [];
@@ -50,31 +52,17 @@ $(document).ready(function(){
         }
     });
 
-    /* need to fix submission of double records when an option is selected but "no" is chosen, that selection gets submitted whenever the selected eventually gets sent */
-
-    $("#eventlist").on("click", "div", function() { 
-        var submitEvent = $(this).text();
-        var submitEventDate = Date();
-
-        $("#main").hide();
-        $("#popup").show();
-        $("#prompt").html("Record <span id=mshighlight>" + submitEvent + "</span> event?");
-
-            $("#yes").on("click", function() {
-            $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/etracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
-                data: JSON.stringify( { eventType : submitEvent, eventDate : submitEventDate} ),
-                type: "POST",
-                contentType: "application/json" } );
-            $("#success").show();
-            $(".disc").hide();
-            $("#prompt").hide();
-            setTimeout(function() { window.location.href = "index.html"; }, 3000);
-        });
-    });
-
-    $("#no").on("click", function() {
-        $("#main").show();
-        $("#popup").hide();
+    $("#eventlist").on("click", "div", function() {
+                var event = $(this).text();
+                var eventDate = Date();
+                var eventType = "event";
+                $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/tracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
+                    data: JSON.stringify( { type : eventType, content: event, date : eventDate} ),
+                    type: "POST",
+                    contentType: "application/json" } );
+                $("#main").hide();
+                $("#success").html("<span id=mshighlight>" + event + "</span> recorded!").fadeIn();                  
+                setTimeout(function() { window.location.href = "index.html"; }, 3000);
     });
 
     /* toggle delete buttons */

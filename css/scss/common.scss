@@ -55,6 +55,11 @@ h2 {
 	font-size: 2em;
 }
 
+a {
+	text-decoration: none;
+	color: #514f4e
+}
+
 .introtag {
 	text-align: center;
 	font-size: 2em;
@@ -130,41 +135,17 @@ h2 {
 	cursor: pointer;
 }
 
-#popup {
-	height: 100vh;
-	width: 100vw;
-	background-color: #fff;
-}
-
-#popup {
-	display: none;
-}
 
 #prompt, #buttonbar {
 	display: block;
 }
 
-#yes, #no {
-	display: inline-block;
-}
-
-#yes {
-	background-color: #4CAF50;
-}
-
-#no {
-	background-color: #F44336;
-}
-
-#yes:hover {
-	cursor: pointer;
-}
-
-#no:hover {
-	cursor: pointer;
-
-}
-
 #success {
+	display: none;
+	margin-top: 10%;
+
+}
+
+#frontpage, #main {
 	display: none;
 }

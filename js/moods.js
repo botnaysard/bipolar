@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $("#main").fadeIn();
+
     /* retrieve possible moods from list and display them */
 
     $.getJSON("https://api.mlab.com/api/1/databases/moodtracker/collections/moods?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg", function (data) {
@@ -52,32 +54,17 @@ $(document).ready(function(){
         }
     });
 
-    /* need to fix submission of double records when an option is selected but "no" is chosen, that selection gets submitted whenever the selected eventually gets sent */
-
-    $("#moodlist").on("click", "div", function() { 
-        var submitMood = $(this).text();
-        var submitMoodDate = Date();
-
-        $("#main").hide();
-        $("#popup").show();
-        $("#prompt").html("Record <span id=mshighlight>" + submitMood + "</span> moodstate?");
-
-        $("#yes").on("click", function() {
-            $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
-                data: JSON.stringify( { moodType : submitMood, moodDate : submitMoodDate} ),
-                type: "POST",
-                contentType: "application/json" } );
-            $("#success").show();
-            $(".disc").hide();
-            $("#prompt").hide();
-            setTimeout(function() { window.location.href = "index.html"; }, 3000);
-        });
-
-        $("#no").on("click", function() {
-            $("#main").show();
-            $("#popup").hide();
-        });
-
+    $("#moodlist").on("click", "div", function() {
+                var mood = $(this).text();
+                var moodDate = Date();
+                var moodType = "mood";
+                $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/tracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
+                    data: JSON.stringify( { type : moodType, content: mood, date : moodDate} ),
+                    type: "POST",
+                    contentType: "application/json" } );
+                $("#main").hide();
+                $("#success").html("<span id=mshighlight>" + mood + "</span> mood state recorded!").fadeIn();    
+                setTimeout(function() { window.location.href = "index.html"; }, 3000);
     });
 
     /* toggle delete buttons */
