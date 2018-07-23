@@ -14,15 +14,44 @@
 	<section id="main">	
 		<h1><a href="index.html">insight:</a></h1>
 			<div id="modeinfo">
-				<div class="introtag makeinline">What's your mood right now?</div>
-				<div id="editmode"><i class="fas fa-edit fa-2x"></i></div>
+				<div class="introtag makeinline">What's your mood right now?</div>	
+				<div id="moodhelp"><i class="far fa-question-circle fa-2x"></i></div>			
 			</div>
-		<div class="holder" id="moodlist"></div>
-		<form id="addnewform"> 
-			<input type="text" name="newentry" id="nentry" placeholder="add a custom mood">
-			<button type="button" id="addentry"><i class="far fa-save fa-3x"></i></button>
-		</form>
+		<div class="holder" id="moodlist">
+			<div class="disc" id="p3">+3</div>
+			<div class="disc" id="p2">+2</div>
+			<div class="disc" id="p1">+1</div>
+			<div class="disc" id="zeromood">0</div>
+			<div class="disc" id="n1">-1</div>
+			<div class="disc" id="n2">-2</div>
+			<div class="disc" id="n3">-3</div>
+		</div>
 	</section>
+	<div id="helpwindow">
+		<div id="modeinfo" class="vertcenter">		
+			<div class="introtag makeinline">Mood Evaluation Guidlines</div>
+			<i class="far fa-times-circle fa-2x" id="closehelp"></i>
+			<div id="mguidelinebox">
+				<p>
+					Insight breaks moods down into simple numerical values to make recording as easy as possible.  
+				</p>
+				<p>
+					Rankings are based on a seven-point scale, where +3 represents the most positive feelings and -3 represents the most negative.  Over time, you will associate each rating with your own individual moods.
+				</p>
+				<p>Below is a general guideline to get you started.</p>
+				<ul id="moodexplanations">
+					<li><span class="spacer"><strong>+3</strong></span>Mania, Hypomania</li>
+					<li><span class="spacer"><strong>+2</strong></span>Agitated, Elated, Euphoric</li>
+					<li><span class="spacer"><strong>+1</strong></span>Happy, Content, Optimistic</li>
+					<li><span class="spacer"><strong>0</strong></span>Neutral, Normal</li>
+					<li><span class="spacer"><strong>-1</strong></span>Sad, Bummed, Irritated</li>
+					<li><span class="spacer"><strong>-2</strong></span>Depressed, Angry, Irate</li>
+					<li><span class="spacer"><strong>-3</strong></span>Suicidal, Berserker-like Rage</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<section>
 		<div id="success" class="introtag"></div>
 	</section>
 	<footer></footer>

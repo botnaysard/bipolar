@@ -55,9 +55,8 @@ $(document).ready(function(){
     $("#eventlist").on("click", "div", function() {
                 var event = $(this).text();
                 var eventDate = Date();
-                var eventType = "event";
-                $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/tracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
-                    data: JSON.stringify( { type : eventType, content: event, date : eventDate} ),
+                $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/etracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
+                    data: JSON.stringify( { event: event, date : eventDate} ),
                     type: "POST",
                     contentType: "application/json" } );
                 $("#main").hide();
@@ -79,7 +78,6 @@ $(document).ready(function(){
             data: JSON.stringify( { fieldName : newEntry } ),
             type: "POST",
             contentType: "application/json" } );
-        alert("new event " + newEntry + " added");
         $("#addnewform").trigger("reset");
         setTimeout(location.reload.bind(location), 750);
     });
