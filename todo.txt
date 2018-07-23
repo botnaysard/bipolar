@@ -1,0 +1,9 @@
+- add help/instructions 
+- calculations and graphing for analysis
+- clean up sass
+- port color of selected item over to event/mood confirmation text
+- make it look good on mobile
+- add multi-user ability
+- refactor with Vue.js or Ember.js
+- refactor with active node.js server (last step, if it can actually be deployed and used by others)
+- add to portfolio
