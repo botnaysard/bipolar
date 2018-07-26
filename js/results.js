@@ -1,29 +1,25 @@
-$(document).ready(function(){
-
-    // $("#main").fadeIn();  
-
-    // get recorded mood rankings and add them to an array
-
-    var moodTimeline = [];
-    var nodeNumber = []
-
-    $.getJSON("https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg", function (data) {
-        for (var i = 0; i < data.length; i++) {
-            moodTimeline.push(data[i].moodRating);
-            nodeNumber.push(i);
-        }    
-    });
-
-    console.log(moodTimeline);
-    console.log(nodeNumber);
-    var lineData = {
-      labels: nodeNumber,
-      series: moodTimeline
+fetch("https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(moods) {
+    var data = {
+      labels: moods.map(function(mood) {
+        return mood.date.slice(4, 10);
+      }),
+      series: [ moods.map(function(mood) {
+        return mood.moodRating;
+      }) ]
     };
     var options = {
+      high: 3,
+      low: -3,
+      onlyInteger: true,
+      axisY: {
+        onlyInteger: true
+      }
     };
-    new Chartist.Line('.ct-chart', lineData, options);
-    
-
-});
+  
+    new Chartist.Line('#chart', data, options);
+  });
 

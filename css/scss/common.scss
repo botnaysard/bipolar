@@ -66,6 +66,7 @@ a {
 .introtag {
 	text-align: center;
 	font-size: 2em;
+	margin-bottom: 25px;
 }
 
 .makeinline {
@@ -243,4 +244,11 @@ a {
 
 .centerizer {
 	margin: 0px auto;
+}
+
+// Format charts
+
+.chartholder {
+	width: 60%;
+	margin: 50px auto 20px;
 }

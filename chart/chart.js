@@ -5,16 +5,19 @@ fetch("https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?api
   .then(function(moods) {
     var data = {
       labels: moods.map(function(mood) {
-        return mood.date;
+        return mood.date.slice(4, 10);
       }),
       series: [ moods.map(function(mood) {
         return mood.moodRating;
       }) ]
     };
     var options = {
-     width: 400,
-      height: 300,
-      distributeSeries: true
+      high: 3,
+      low: -3,
+      onlyInteger: true,
+      axisY: {
+        onlyInteger: true
+      }
     };
   
     new Chartist.Line('#chart', data, options);
