@@ -7,13 +7,16 @@ fetch("https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?api
       labels: moods.map(function(mood) {
         return mood.date;
       }),
-      series: moods.map(function(mood) {
+      series: [ moods.map(function(mood) {
         return mood.moodRating;
-      })
+      }) ]
+    };
+    var options = {
+     width: 400,
+      height: 300,
+      distributeSeries: true
     };
   
-    var chart = new Chartist.Bar('#chart', data, {
-      distributeSeries: true
-    });
+    new Chartist.Line('#chart', data, options);
   });
 
