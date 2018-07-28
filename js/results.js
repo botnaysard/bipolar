@@ -57,10 +57,14 @@ fetch("https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?api
     };
 
     new Chartist.Pie('#chart2', data, options);
-        
+
+    new Chartist.Bar('#chart3', {
+        labels: ['-3', '-2', '-1', '0', '1', '2', '3'],
+        series: pieMatrix
+    }, {
+    distributeSeries: true
+    });  
 
     });
-
-
 
 

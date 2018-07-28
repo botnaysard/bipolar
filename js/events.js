@@ -44,7 +44,7 @@ $(document).ready(function(){
             $.ajax( { url: urlForDeletion,
             type: "DELETE",
             async: true,
-            timeout: 300000,
+            timeout: 100000,
             success: function (data) { },
             error: function (xhr, status, err) { } } );
             setTimeout(location.reload.bind(location), 750);
@@ -61,7 +61,7 @@ $(document).ready(function(){
                     contentType: "application/json" } );
                 $("#main").hide();
                 $("#success").html("<span id=mshighlight>" + event + "</span> recorded!").fadeIn();                  
-                setTimeout(function() { window.location.href = "index.html"; }, 3000);
+                setTimeout(function() { window.location.href = "index.html"; }, 1000);
     });
 
     /* toggle delete buttons */

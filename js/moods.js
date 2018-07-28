@@ -12,7 +12,7 @@ $(document).ready(function(){
                     contentType: "application/json" } );
                 $("#main").hide();
                 $("#success").html("Mood rating of <span id=mshighlight>" + moodText + "</span> successfully recorded!").fadeIn();    
-                setTimeout(function() { window.location.href = "index.html"; }, 3000);
+                setTimeout(function() { window.location.href = "index.html"; }, 1000);
     });
 
     $("#moodhelp").on("click", function(){

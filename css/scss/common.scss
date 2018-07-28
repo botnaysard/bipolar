@@ -250,11 +250,19 @@ a {
 	margin: 0px auto;
 }
 
+.charttag {
+	display: inline-block;
+}
+
+.charttag:hover {
+	cursor: pointer;
+}
+
 // Format charts
 
 .chartholder {
 	width: 50%;
-	margin: 50px auto 20px;
+	margin: 50px auto 20px auto;
 }
 
 .ct-series-a, .ct-line {
