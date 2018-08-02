@@ -17,21 +17,26 @@
 <body>
 	<header></header>
 	<section id="frontpage">
-		<div class="chartholder">
-			<h1><a href="index.html">insight:</a></h1>
-			<div class="achart" id="mtl">
-			<div class="introtag charttag">Moods Timeline</div>
-				<div id="chart1" class="ct-golden-section"></div>
-				<div class="spacer"></div>
-			</div>
-			<div class="achart" id="mpie">
-				<div class="introtag charttag">Mood Prevalence (pie)</div>
-				<div id="chart2" class="ct-golden-section"></div>
-				<div class="spacer"></div>
-			</div>
-			<div class="achart" id="mbar">
-				<div class="introtag charttag">Mood Prevalence (bar)</div>
-				<div id="chart3" class="ct-golden-section"></div>
+		<h1><a href="index.html">insight:</a></h1>
+		<div id="chartmenu">
+			<div class="charttag underline" id="timeline">Moods Timeline</div>
+			<div class="charttag" id="prevbytype">Mood Prevalence (by type)</div>
+			<div class="charttag" id="prevbyrating">Mood Prevalence (by rating)</div>
+		</div>
+		<div id="outerchartholder">
+			<div class="chartholder">	
+				<div class="achart" id="mtl">		
+					<div id="chart1" class="ct-golden-section"></div>
+					<div class="spacer"></div>
+				</div>
+				<div class="achart" id="mpie">
+					
+					<div id="chart2" class="ct-golden-section"></div>
+					<div class="spacer"></div>
+				</div>
+				<div class="achart" id="mbar">
+					<div id="chart3" class="ct-golden-section"></div>
+				</div>
 			</div>
 		</div>
 	</section>

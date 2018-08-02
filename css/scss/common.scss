@@ -250,19 +250,52 @@ a {
 	margin: 0px auto;
 }
 
+#chartmenu {
+	width: 600px;
+	margin: 0px auto;
+}
+
 .charttag {
 	display: inline-block;
+	text-align: center;
+	margin: 0px 10px;
 }
 
 .charttag:hover {
 	cursor: pointer;
 }
 
+.underline {
+	border-bottom: 1px solid black;
+}
+
 // Format charts
 
-.chartholder {
-	width: 50%;
+#outerchartholder {
+	width: 625px;
+	height: 400px;
 	margin: 50px auto 20px auto;
+	overflow: hidden;
+
+}
+
+.chartholder {
+	width: 625px;
+	height: 400px;
+	// margin: 50px auto 20px auto;
+	padding-right: 50px;
+	overflow-y: scroll;
+	box-sizing: content-box;
+}
+
+
+.achart {
+	width: 600px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
 .ct-series-a, .ct-line {

@@ -45,18 +45,27 @@ fetch("https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?api
         var p3 = getOccurrence(allMoods, 3);  
 
         var pieMatrix = [n3, n2, n1, zilch, p1, p2, p3];
-        console.log(pieMatrix);
 
         var data = {
         labels: ['-3', '-2', '-1', '0', '1', '2', '3'],
         series: pieMatrix
         };
 
-    var options = {
+        var negatives = n1 + n2 + n3;
+        var positives = p1 + p2 +p3;
 
-    };
+        var posNeg = [negatives, zilch, positives];
+        
+        var pnMatrix = {
+        labels: ['Negative', 'Neutral', 'Positive'],
+        series: posNeg
+        };
 
-    new Chartist.Pie('#chart2', data, options);
+        var options = {
+
+        };
+
+    new Chartist.Pie('#chart2', pnMatrix, options);
 
     new Chartist.Bar('#chart3', {
         labels: ['-3', '-2', '-1', '0', '1', '2', '3'],
@@ -67,4 +76,27 @@ fetch("https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?api
 
     });
 
+// jQuery clicker to scroll throught the various charts
+
+$(document).ready(function(){
+
+
+    $('.charttag').on('click', function(){
+        console.log('click!');
+        if ($(this).attr('id') == "timeline") {
+            $('.chartholder').animate({ scrollTop: "0px" });    
+            $(this).addClass('underline');
+            $(this).siblings().removeClass('underline');
+        } else if ($(this).attr('id') == "prevbytype") {
+            $('.chartholder').animate({ scrollTop: "410px" }); 
+            $(this).addClass('underline');
+            $(this).siblings().removeClass('underline');   
+        } else if ($(this).attr('id') == "prevbyrating") {
+            $('.chartholder').animate({ scrollTop: "800px" });   
+            $(this).addClass('underline');
+            $(this).siblings().removeClass('underline');
+        }
+
+    });
+});        
 
