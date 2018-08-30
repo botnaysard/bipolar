@@ -322,8 +322,63 @@ a {
 
 @media only screen
   and (orientation: portrait) {
+	#frontpage, #main {
+		position: absolute;
+  		top: 50%;
+  		transform: translateY(-50%);
+  		width: 100%
+	}
+
+	h1 {
+		font: {
+			size: 4.5em;
+		}
+	}
+	.holder {
+		width: 90%;
+	}
+
 	.disc {
 		width: 85%;
 		border-radius: 0px;
+		font: {
+			size: 2.5em;
+			weight: 300;
+		}
 	}
+
+	.introtag {
+		font: {
+			size: 3em;
+		}
+	}
+
+	#mguidelinebox {
+		font: {
+			size: 2em;
+		}
+		width: 85%;
+	}
+
+	#moodexplanations {
+		min-width: 70%;
+	}
+
+	.spacer {
+	height: 1.5em;
+	width: 1.5em;
+	border: 0px;
+	border-radius: 0px;
+	}
+
+	#nentry {
+		width: 50%;
+		font: {
+			size: 2.5em;
+		}
+	}
+	
   }
+
+
+
