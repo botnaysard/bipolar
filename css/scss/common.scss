@@ -314,3 +314,16 @@ a {
 .ct-slice-pie {
 	stroke-width: 0px !important;
 }
+
+
+/*** Responsive ***/
+
+// for prototype, use bare minimum media queries; just correct for phones held in portrait mode and add the rest later.
+
+@media only screen
+  and (orientation: portrait) {
+	.disc {
+		width: 85%;
+		border-radius: 0px;
+	}
+  }
