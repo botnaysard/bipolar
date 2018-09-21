@@ -6,6 +6,30 @@ $(document).ready(function(){
                 var moodText = $(this).text();
                 var moodInt = parseInt(moodText);
                 var moodDate = Date();
+                $("#moodlist").hide();
+                $("#meds").fadeIn();
+                $("#howmood").hide();
+                $("#takemeds").fadeIn();
+    });
+
+    $("#meds").on("click", "div", function() {
+                var tookMeds = $(this).text();                
+                $("#meds").hide();
+                $("#sleep").fadeIn();
+                $("#takemeds").hide();
+                $("#howsleep").fadeIn();
+    });
+
+    $("#sleep").on("click", "div", function() {
+                var sleepAmount = $(this).text();                               
+    });
+
+
+
+
+
+    /*
+
                 $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
                     data: JSON.stringify( { moodRating: moodInt, date : moodDate} ),
                     type: "POST",
@@ -24,5 +48,7 @@ $(document).ready(function(){
         $("#helpwindow").hide();
         $("#main").fadeIn();
     });
+
+    */
 
 });

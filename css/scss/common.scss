@@ -10,7 +10,7 @@ footer {
 
 
 .holder {
-	width: 500px;
+
 	margin: 20px auto;
 	padding: 0px;
 	text-align: center
@@ -222,6 +222,30 @@ a {
 	background-color: #000;
 }
 
+#meds, #takemeds, #sleep, #howsleep {
+	display: none;
+}
+
+#medsyes {
+	background-color: #4CAF50;
+}
+
+#medsno {
+	background-color: #F44336;
+}
+
+#lessthan6 {
+	background-color: #E91E63;
+}
+
+#sixeight {
+	background-color: #03A9F4;
+}
+
+#morethan8 {
+	background-color: #7C4DFF;
+}
+
 #moodexplanations {
 	list-style-type: none;
 	width: 300px;
@@ -272,17 +296,14 @@ a {
 // Format charts
 
 #outerchartholder {
-	width: 625px;
-	height: 400px;
+	width: 55%;
 	margin: 50px auto 20px auto;
 	overflow: hidden;
 
 }
 
 .chartholder {
-	width: 625px;
-	height: 400px;
-	// margin: 50px auto 20px auto;
+	width: 100%;
 	padding-right: 50px;
 	overflow-y: scroll;
 	box-sizing: content-box;
@@ -290,7 +311,7 @@ a {
 
 
 .achart {
-	width: 600px;
+	width: 100%;
 }
 
 ::-webkit-scrollbar {

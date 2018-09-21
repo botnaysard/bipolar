@@ -1,1 +1,439 @@
-body{font-family:Raleway;background-color:#fff;color:#514f4e}footer{height:25px}.holder{width:500px;margin:20px auto;padding:0px;text-align:center}.disc{display:inline-block;height:120px;width:120px;line-height:120px;padding:10px;margin:10px;text-align:center;vertical-align:middle;border-radius:50%;font-size:1em;font-weight:300;color:#fff;transition:all 0.1s ease-in-out 0.1s;position:relative}.disc:hover{cursor:pointer;line-height:130px;height:130px;width:130px;margin:5px;font-size:1.1em;-webkit-box-shadow:10px 10px 16px -9px rgba(0,0,0,0.75);-moz-box-shadow:10px 10px 16px -9px rgba(0,0,0,0.75);box-shadow:10px 10px 16px -9px rgba(0,0,0,0.75)}h1{text-align:center;font-size:3em}h2{display:inline-block;text-align:center;font-size:2em}a{text-decoration:none;color:#514f4e}.introtag{text-align:center;font-size:2em;margin-bottom:25px}.makeinline{display:inline-block}.delbutton{padding:0px;color:#fff;display:none}.delbutton:hover{color:#000}#editmode,#moodhelp{text-align:center;display:inline-block;margin-left:20px}#editmode:hover,#moodhelp:hover,#closehelp:hover{cursor:pointer;color:#2196F3;transition:all 0.1s ease-in-out 0.1s}#helpwindow{display:none;width:100%;height:100%}.spacer{display:inline-block;margin:0px 20px;height:40px;width:40px;border:0px;border-radius:50%;font-size:1.5em;text-align:center}#closehelp{display:inline-block;margin-left:20px}#mguidelinebox{width:50%;margin:0px auto;text-align:left}.hidden{display:none}#modeinfo{text-align:center}#mood{background-color:#3F51B5}#event{background-color:#E91E63}#results{background-color:#009688}#addnewform{text-align:center}#nentry{width:20%;font-size:1.3em;color:#514f4e;text-align:center;padding:5px;vertical-align:middle;border:1px solid #514f4e;border-radius:3px}#addentry{background-color:#fff;border:1px solid transparent;color:#514f4e;vertical-align:middle}#addentry:hover{color:#2196F3;transition:all 0.1s ease-in-out 0.1s;cursor:pointer}#prompt,#buttonbar{display:block}#success{display:none;margin-top:10%}#frontpage,#main{display:none}#zeromood{display:block;margin-left:auto;margin-right:auto}#p3,#hp3{background-color:#1976D2}#p2,#hp2{background-color:#03A9F4}#p1,#hp1{background-color:#00BCD4}#zeromood,#hzeromood{background-color:#ff99bb}#n1,#hn1{background-color:#9E9E9E}#n2,#hn2{background-color:#607D8B}#n3,#hn3{background-color:#000}#moodexplanations{list-style-type:none;width:300px;margin:25px auto}#moodexplanations>li{margin:10px 0px;line-height:2em}.vertcenter{position:absolute;top:50%;transform:translateY(-50%);margin-left:auto;margin-right:auto}.wf{color:#fff}.centerizer{margin:0px auto}#chartmenu{width:600px;margin:0px auto}.charttag{display:inline-block;text-align:center;margin:0px 10px}.charttag:hover{cursor:pointer}.underline{border-bottom:1px solid black}#outerchartholder{width:625px;height:400px;margin:50px auto 20px auto;overflow:hidden}.chartholder{width:625px;height:400px;padding-right:50px;overflow-y:scroll;box-sizing:content-box}.achart{width:600px}::-webkit-scrollbar{width:0px;background:transparent}.ct-series-a,.ct-line{stroke:#009688 !important;stroke-width:3px !important}.ct-point{stroke:#3F51B5 !important}.ct-slice-pie{stroke-width:0px !important}@media only screen and (orientation: portrait){#frontpage,#main{position:absolute;top:50%;transform:translateY(-50%);width:100%}h1{font-size:4.5em}.holder{width:90%}.disc{width:85%;border-radius:0px;font-size:2.5em;font-weight:300}.introtag{font-size:3em}#mguidelinebox{font-size:2em;width:85%}#moodexplanations{min-width:70%}.spacer{height:1.5em;width:1.5em;border:0px;border-radius:0px}#nentry{width:50%;font-size:2.5em}}
+/* line 1, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+body {
+  font-family: Raleway;
+  background-color: #fff;
+  color: #514f4e;
+}
+
+/* line 7, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+footer {
+  height: 25px;
+}
+
+/* line 12, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.holder {
+  margin: 20px auto;
+  padding: 0px;
+  text-align: center;
+}
+
+/* line 19, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.disc {
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+  line-height: 120px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  font-size: 1em;
+  font-weight: 300;
+  color: #fff;
+  transition: all 0.1s ease-in-out 0.1s;
+  position: relative;
+}
+
+/* line 38, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.disc:hover {
+  cursor: pointer;
+  line-height: 130px;
+  height: 130px;
+  width: 130px;
+  margin: 5px;
+  font-size: 1.1em;
+  -webkit-box-shadow: 10px 10px 16px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 16px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 16px -9px rgba(0, 0, 0, 0.75);
+}
+
+/* line 50, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
+/* line 55, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+h2 {
+  display: inline-block;
+  text-align: center;
+  font-size: 2em;
+}
+
+/* line 61, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+a {
+  text-decoration: none;
+  color: #514f4e;
+}
+
+/* line 66, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.introtag {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+/* line 72, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.makeinline {
+  display: inline-block;
+}
+
+/* line 76, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.delbutton {
+  padding: 0px;
+  color: #fff;
+  display: none;
+}
+
+/* line 82, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.delbutton:hover {
+  color: #000;
+}
+
+/* line 86, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#editmode, #moodhelp {
+  text-align: center;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+/* line 92, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#editmode:hover,
+#moodhelp:hover,
+#closehelp:hover {
+  cursor: pointer;
+  color: #2196F3;
+  transition: all 0.1s ease-in-out 0.1s;
+}
+
+/* line 100, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#helpwindow {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 106, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.spacer {
+  display: inline-block;
+  margin: 0px 20px;
+  height: 40px;
+  width: 40px;
+  border: 0px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/* line 117, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#closehelp {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+/* line 122, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#mguidelinebox {
+  width: 50%;
+  margin: 0px auto;
+  text-align: left;
+}
+
+/* line 128, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.hidden {
+  display: none;
+}
+
+/* line 132, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#modeinfo {
+  text-align: center;
+}
+
+/* line 136, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#mood {
+  background-color: #3F51B5;
+}
+
+/* line 140, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#event {
+  background-color: #E91E63;
+}
+
+/* line 144, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#results {
+  background-color: #009688;
+}
+
+/* line 148, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#addnewform {
+  text-align: center;
+}
+
+/* line 152, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#nentry {
+  width: 20%;
+  font-size: 1.3em;
+  color: #514f4e;
+  text-align: center;
+  padding: 5px;
+  vertical-align: middle;
+  border: 1px solid #514f4e;
+  border-radius: 3px;
+}
+
+/* line 163, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#addentry {
+  background-color: #fff;
+  border: 1px solid transparent;
+  color: #514f4e;
+  vertical-align: middle;
+}
+
+/* line 170, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#addentry:hover {
+  color: #2196F3;
+  transition: all 0.1s ease-in-out 0.1s;
+  cursor: pointer;
+}
+
+/* line 177, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#prompt, #buttonbar {
+  display: block;
+}
+
+/* line 181, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#success {
+  display: none;
+  margin-top: 10%;
+}
+
+/* line 186, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#frontpage, #main {
+  display: none;
+}
+
+/* line 190, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#zeromood {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 196, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#p3, #hp3 {
+  background-color: #1976D2;
+}
+
+/* line 200, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#p2, #hp2 {
+  background-color: #03A9F4;
+}
+
+/* line 204, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#p1, #hp1 {
+  background-color: #00BCD4;
+}
+
+/* line 208, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#zeromood, #hzeromood {
+  background-color: #ff99bb;
+}
+
+/* line 212, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#n1, #hn1 {
+  background-color: #9E9E9E;
+}
+
+/* line 216, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#n2, #hn2 {
+  background-color: #607D8B;
+}
+
+/* line 221, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#n3, #hn3 {
+  background-color: #000;
+}
+
+/* line 225, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#meds, #takemeds, #sleep, #howsleep {
+  display: none;
+}
+
+/* line 229, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#medsyes {
+  background-color: #4CAF50;
+}
+
+/* line 233, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#medsno {
+  background-color: #F44336;
+}
+
+/* line 237, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#lessthan6 {
+  background-color: #E91E63;
+}
+
+/* line 241, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#sixeight {
+  background-color: #03A9F4;
+}
+
+/* line 245, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#morethan8 {
+  background-color: #7C4DFF;
+}
+
+/* line 249, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#moodexplanations {
+  list-style-type: none;
+  width: 300px;
+  margin: 25px auto;
+}
+
+/* line 255, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#moodexplanations > li {
+  margin: 10px 0px;
+  line-height: 2em;
+}
+
+/* line 261, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.vertcenter {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 269, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.wf {
+  color: #fff;
+}
+
+/* line 273, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.centerizer {
+  margin: 0px auto;
+}
+
+/* line 277, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#chartmenu {
+  width: 600px;
+  margin: 0px auto;
+}
+
+/* line 282, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.charttag {
+  display: inline-block;
+  text-align: center;
+  margin: 0px 10px;
+}
+
+/* line 288, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.charttag:hover {
+  cursor: pointer;
+}
+
+/* line 292, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.underline {
+  border-bottom: 1px solid black;
+}
+
+/* line 298, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+#outerchartholder {
+  width: 55%;
+  margin: 50px auto 20px auto;
+  overflow: hidden;
+}
+
+/* line 305, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.chartholder {
+  width: 100%;
+  padding-right: 50px;
+  overflow-y: scroll;
+  box-sizing: content-box;
+}
+
+/* line 313, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.achart {
+  width: 100%;
+}
+
+/* line 317, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+  /* make scrollbar transparent */
+}
+
+/* line 322, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.ct-series-a, .ct-line {
+  /* Set the colour of this series line */
+  stroke: #009688 !important;
+  /* Control the thikness of your lines */
+  stroke-width: 3px !important;
+  /* Create a dashed line with a pattern */
+}
+
+/* line 331, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.ct-point {
+  stroke: #3F51B5 !important;
+}
+
+/* line 335, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+.ct-slice-pie {
+  stroke-width: 0px !important;
+}
+
+/*** Responsive ***/
+@media only screen and (orientation: portrait) {
+  /* line 346, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+  #frontpage, #main {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  /* line 353, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+  h1 {
+    font-size: 4.5em;
+  }
+  /* line 358, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+  .holder {
+    width: 90%;
+  }
+  /* line 362, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+  .disc {
+    width: 85%;
+    border-radius: 0px;
+    font-size: 2.5em;
+    font-weight: 300;
+  }
+  /* line 371, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+  .introtag {
+    font-size: 3em;
+  }
+  /* line 377, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+  #mguidelinebox {
+    font-size: 2em;
+    width: 85%;
+  }
+  /* line 384, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+  #moodexplanations {
+    min-width: 70%;
+  }
+  /* line 388, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+  .spacer {
+    height: 1.5em;
+    width: 1.5em;
+    border: 0px;
+    border-radius: 0px;
+  }
+  /* line 395, C:/Users/botnaysard/Coding/Insight/css/scss/common.scss */
+  #nentry {
+    width: 50%;
+    font-size: 2.5em;
+  }
+}
+
+/*# sourceMappingURL=../common.map */

@@ -14,8 +14,14 @@
 	<section id="main">	
 		<h1><a href="index.html">insight:</a></h1>
 			<div id="modeinfo">
-				<div class="introtag makeinline">What's your mood right now?</div>	
+				<div class="introtag makeinline" id="howmood">How was your mood today?</div>	
+				<div class="introtag makeinline" id="takemeds">Did you take all of your medication today?</div>
+				<div class="introtag makeinline" id="howsleep">How many hours did you sleep last night?</div>
+
+			<!--
 				<div id="moodhelp"><i class="far fa-question-circle fa-2x"></i></div>			
+			-->
+
 			</div>
 		<div class="holder" id="moodlist">
 			<div class="disc" id="p3">+3</div>
@@ -26,7 +32,24 @@
 			<div class="disc" id="n2">-2</div>
 			<div class="disc" id="n3">-3</div>
 		</div>
+
+
+		<div class="holder" id="meds">
+			<div class="disc" id="medsyes">yes</div>
+			<div class="disc" id="medsno">no</div>
+		</div>
+
+		<div class="holder" id="sleep">
+			<div class="disc" id="lessthan6">&lt; 6</div>
+			<div class="disc" id="sixeight">6 - 8</div>
+			<div class="disc" id="morethan8">&gt; 8</div>
+		</div>
+
+
 	</section>
+
+<!--
+
 	<div id="helpwindow">
 		<div id="modeinfo" class="vertcenter">		
 			<div class="introtag makeinline">Mood Evaluation Guidlines</div>
@@ -51,6 +74,8 @@
 			</div>
 		</div>
 	</div>
+
+-->
 	<section>
 		<div id="success" class="introtag"></div>
 	</section>
