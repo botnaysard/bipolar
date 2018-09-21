@@ -1,9 +1,23 @@
-- add help/instructions 
-- calculations and graphing for analysis
+features
+========
+
+- re-initialize database to accomodate new data format (which will log a date, mood, hours of sleep, and whether or not the user took their meds)
+- restrict the number of visible to dates 28 days (possibly add a feature later to allow user selectable date range)
+- find a way to allow the user to click on the mood graph node or otherwise select a date to bring up the sleep/meds entries for that particular day) so that they can see how those two key elements relate to or affect the recorded mood.
+- potentially re-introduce the other graph types, or just display those analysis in text below the main graph (kind of like a dashboard indicating the average positive/negative/netural moods as percentage, etc).
+- dump to image or pdf so reports can be printed
+- add multi-user ability/login/etc.
+
+minor stuff
+===========
+
 - clean up sass
-- port color of selected item over to event/mood confirmation text
-- make it look good on mobile
-- add multi-user ability
+- make the responsive more robust/thorough
+
+
+maybes for down the road
+========================
 - refactor with Vue.js or Ember.js
 - refactor with active node.js server (last step, if it can actually be deployed and used by others)
-- add to portfolio
+- port to android and/or ios
+
