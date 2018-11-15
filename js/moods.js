@@ -2,26 +2,22 @@ $(document).ready(function(){
 
     $("#main").fadeIn();
 
+    var submitData = {};
+
     $("#moodlist").on("click", "div", function () {
                 var moodText = $(this).text();
                 var moodInt = parseInt(moodText);
                 var moodDate = Date();
-                console.log(moodText, moodInt, moodDate);
+                //console.log(moodText, moodInt, moodDate);
                 $("#moodlist").hide();
                 $("#meds").fadeIn();
                 $("#howmood").hide();
                 $("#takemeds").fadeIn();
-                var moodArray = [moodText, moodInt, moodDate]; 
-
-                // *** FIND A WAY TO GET THIS ARRAY OUT OF THE FUNCTION SO IT CAN BE ADDED TO AJAX
-                // *** IS IT POSSIBLE TO CREATE A NAMED FUNCTION USING JQUERY .ON() - YES SEE BROWSER BOOKMARKS FOR SOLUTION
-
-                console.log(moodArray);
+                submitData.rating = moodInt;
+                submitData.date = moodDate;
+                //console.log(submitData.rating, submitData.date);
+             
     });
- 
-    /*
-
-    //
 
     $("#meds").on("click", "div", function() {
                 var tookMeds = $(this).text();                
@@ -29,13 +25,21 @@ $(document).ready(function(){
                 $("#sleep").fadeIn();
                 $("#takemeds").hide();
                 $("#howsleep").fadeIn();
+                submitData.meds = tookMeds;
     });
 
     $("#sleep").on("click", "div", function() {
                 var sleepAmount = $(this).text();
                 $("#sleep").fadeOut();
                 $("#howsleep").fadeOut();
+                submitData.sleep = sleepAmount
     });
+
+    document.body.onkeyup = function(e){
+        if(e.keyCode == 32){
+            console.log(submitData.rating, submitData.date, submitData.meds, submitData.sleep);
+        }
+    }
 
     /*
 
