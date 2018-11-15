@@ -2,15 +2,26 @@ $(document).ready(function(){
 
     $("#main").fadeIn();
 
-    $("#moodlist").on("click", "div", function() {
+    $("#moodlist").on("click", "div", function () {
                 var moodText = $(this).text();
                 var moodInt = parseInt(moodText);
                 var moodDate = Date();
+                console.log(moodText, moodInt, moodDate);
                 $("#moodlist").hide();
                 $("#meds").fadeIn();
                 $("#howmood").hide();
                 $("#takemeds").fadeIn();
+                var moodArray = [moodText, moodInt, moodDate]; 
+
+                // *** FIND A WAY TO GET THIS ARRAY OUT OF THE FUNCTION SO IT CAN BE ADDED TO AJAX
+                // *** IS IT POSSIBLE TO CREATE A NAMED FUNCTION USING JQUERY .ON() - YES SEE BROWSER BOOKMARKS FOR SOLUTION
+
+                console.log(moodArray);
     });
+ 
+    /*
+
+    //
 
     $("#meds").on("click", "div", function() {
                 var tookMeds = $(this).text();                
@@ -21,12 +32,10 @@ $(document).ready(function(){
     });
 
     $("#sleep").on("click", "div", function() {
-                var sleepAmount = $(this).text();                               
+                var sleepAmount = $(this).text();
+                $("#sleep").fadeOut();
+                $("#howsleep").fadeOut();
     });
-
-
-
-
 
     /*
 
