@@ -13,10 +13,9 @@ $(document).ready(function(){
                 $("#meds").fadeIn();
                 $("#howmood").hide();
                 $("#takemeds").fadeIn();
+                $("#moodhelp").hide();
                 submitData.rating = moodInt;
-                submitData.date = moodDate;
-                //console.log(submitData.rating, submitData.date);
-             
+                submitData.date = moodDate;             
     });
 
     $("#meds").on("click", "div", function() {
@@ -29,27 +28,19 @@ $(document).ready(function(){
     });
 
     $("#sleep").on("click", "div", function() {
-                var sleepAmount = $(this).text();
-                $("#sleep").fadeOut();
-                $("#howsleep").fadeOut();
-                submitData.sleep = sleepAmount
-    });
+        var sleepAmount = $(this).text();
+        //$("#sleep").fadeOut();
+        //$("#howsleep").fadeOut();
+        submitData.sleep = sleepAmount;
 
-    document.body.onkeyup = function(e){
-        if(e.keyCode == 32){
-            console.log(submitData.rating, submitData.date, submitData.meds, submitData.sleep);
-        }
-    }
-
-    /*
-
-                $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
-                    data: JSON.stringify( { moodRating: moodInt, date : moodDate} ),
-                    type: "POST",
-                    contentType: "application/json" } );
-                $("#main").hide();
-                $("#success").html("Mood rating of <span id=mshighlight>" + moodText + "</span> successfully recorded!").fadeIn();    
-                setTimeout(function() { window.location.href = "index.html"; }, 1000);
+        $.ajax( { url: "https://api.mlab.com/api/1/databases/moodtracker/collections/mtracked?apiKey=ybAPUS6CcJVkdlwxn0LxCHtbbZVUgtQg",
+        data: JSON.stringify( { moodRating: submitData.rating, date : submitData.date, medsTaken: submitData.meds, sleepHours: submitData.sleep } ),
+        type: "POST",
+        contentType: "application/json" } );
+        $("#main").hide();
+        $("#success").html("Mood rating of <span id=mshighlight>" + submitData.rating + "</span> successfully recorded!").fadeIn();    
+        setTimeout(function() { window.location.href = "index.html"; }, 1000);
+                
     });
 
     $("#moodhelp").on("click", function(){
@@ -62,6 +53,5 @@ $(document).ready(function(){
         $("#main").fadeIn();
     });
 
-    */
-
 });
+
